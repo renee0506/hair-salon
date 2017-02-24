@@ -79,7 +79,7 @@ namespace HairSalon
       Client testClient = new Client("Joe");
       testClient.Save();
 
-      test.Client.Delete();
+      testClient.Delete();
       List<Client> expected = new List<Client>{};
       List<Client> actual = Client.GetAll();
 
