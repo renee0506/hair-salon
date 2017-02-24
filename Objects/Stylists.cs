@@ -104,11 +104,16 @@ namespace HairSalon
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("INSERT INTO clients (name) OUTPUT INSERTED.id VALUES (@Name);", conn);
+      SqlCommand cmd = new SqlCommand("INSERT INTO stylists (name, age, bio) OUTPUT INSERTED.id VALUES (@Name, @Age, @Bio);", conn);
 
-      SqlParameter clientNameParameter = new SqlParameter("@Name", this.GetName());
+      SqlParameter stylistNameParameter = new SqlParameter("@Name", this.GetName());
+      SqlParameter stylistAgeParameter = new SqlParameter("@Age", this.GetAge());
+      SqlParameter stylistBioParameter = new SqlParameter("@Bio", this.GetBio());
 
-      cmd.Parameters.Add(clientNameParameter);
+
+      cmd.Parameters.Add(stylistNameParameter);
+      cmd.Parameters.Add(stylistAgeParameter);
+      cmd.Parameters.Add(stylistBioParameter);
       SqlDataReader rdr = cmd.ExecuteReader();
 
       while(rdr.Read())
