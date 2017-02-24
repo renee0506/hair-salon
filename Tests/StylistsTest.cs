@@ -63,7 +63,7 @@ namespace HairSalon
     [Fact]
     public void Test_Find_FindStylistInDatabaseById()
     {
-      Stylist testStylist = new Stylist("Joe");
+      Stylist testStylist = new Stylist("Joe", 24, "5 years in the Industry");
 
       testStylist.Save();
       Stylist actual = Stylist.Find(testStylist.GetId());
