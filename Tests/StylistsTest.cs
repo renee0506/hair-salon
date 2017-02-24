@@ -77,9 +77,13 @@ namespace HairSalon
       Stylist testStylist = new Stylist("Joe", 24, "5 years in the Industry");
       testStylist.Save();
 
-      Client firstClient = new Client("Roy", testStylsit.GetId());
-      Client secondClient = new Client("Jeff", testSylist.GetId());
-      Client thirdClient = new Client("Kay", testSylist.GetId());
+      Client firstClient = new Client("Roy", testStylist.GetId());
+      Client secondClient = new Client("Jeff", testStylist.GetId());
+      Client thirdClient = new Client("Kay", testStylist.GetId());
+
+      firstClient.Save();
+      secondClient.Save();
+      thirdClient.Save();
 
       List<Client> expected = new List<Client> {firstClient, secondClient, thirdClient};
       List<Client> actual = testStylist.GetClients();
