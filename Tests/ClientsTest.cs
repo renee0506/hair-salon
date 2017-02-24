@@ -27,5 +27,14 @@ namespace HairSalon
       //Assert
       Assert.Equal(0, result);
     }
+
+    [Fact]
+    public void Test_EqualOverrideTrueIfClientNamIsSame()
+    {
+      Client firstClient = new Client("Marc");
+      Client secondClient = new Client("Joe");
+
+      Assert.Equal(firstClient, secondClient);
+    }
   }
 }
