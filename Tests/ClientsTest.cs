@@ -47,7 +47,7 @@ namespace HairSalon
       List<Client> expected = new List<Client>{testClient};
       List<Client> actual = Client.GetAll();
       //Assert
-      Assert.Eqaual(expected, actual);
+      Assert.Equal(expected, actual);
     }
   }
 }
