@@ -7,17 +7,17 @@ using HairSalon;
 
 namespace HairSalon
 {
-  public class ClientTest
+  public class ClientTest : IDisposable
   {
     public ClientTest()
     {
       DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
     }
 
-    // public void Dispose()
-    // {
-    //   Client.DeleteAll();
-    // }
+    public void Dispose()
+    {
+      Client.DeleteAll();
+    }
 
     [Fact]
     public void Test_ClientsTableEmptyAtFirst()
