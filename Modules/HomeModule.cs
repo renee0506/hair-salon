@@ -56,6 +56,21 @@ namespace HairSalon
         return View["stylist.cshtml", model];
       };
 
+      Get["/stylist/{stylistId}/client/{id}/delete"] = parameters => {
+        Stylist currentStylist = Stylist.Find(parameters.stylistId);
+        Client currentClient = Client.Find(parameters.id);
+        Dictionary<string, object> model = new Dictionary<string, object>(){{"stylist", currentStylist}, {"client", currentClient}};
+        return View["client_delete.cshtml", model];
+      };
+
+      Delete["/stylist/{stylistId}/client/{id}/deleted"] = parameters => {
+        Client currentClient = Client.Find(parameters.id);
+        currentClient.Delete();
+        Stylist currentStylist = Stylist.Find(parameters.StylistId);
+        List<Client> stylistClients = currentStylist.GetClients();
+        Dictionary<string, object> model = new Dictionary<string, object>(){{"stylist", currentStylist}, {"clients", stylistClients}};
+        return View["stylist.cshtml", model];
+      };
     }
   }
 }
