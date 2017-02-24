@@ -54,11 +54,23 @@ namespace HairSalon
     public void Test_Save_AssignedIdToClient()
     {
       Client testClient = new Client("Joe");
+
       testClient.Save();
       int actual = Client.GetAll()[0].GetId();
       int expected = testClient.GetId();
 
       Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void Test_Find_FindClientInDatabaseById()
+    {
+      Client testClient = new Client("Joe");
+
+      testClient.Save();
+      Client actual = Client.Find(testClient.GetId());
+
+      Assert.Equal(testClient, actual);
     }
   }
 }
