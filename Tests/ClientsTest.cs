@@ -30,8 +30,8 @@ namespace HairSalon
     [Fact]
     public void Test_EqualOverrideTrueIfClientNameIsSame()
     {
-      Client firstClient = new Client("Joe");
-      Client secondClient = new Client("Joe");
+      Client firstClient = new Client("Joe", 1);
+      Client secondClient = new Client("Joe", 1);
 
       Assert.Equal(firstClient, secondClient);
     }
@@ -40,7 +40,7 @@ namespace HairSalon
     public void Test_Save_SaveToDatabase()
     {
       //Arrange
-      Client testClient = new Client("Joe");
+      Client testClient = new Client("Joe", 1);
       //Act
       testClient.Save();
       List<Client> expected = new List<Client>{testClient};
@@ -52,7 +52,7 @@ namespace HairSalon
     [Fact]
     public void Test_Save_AssignedIdToClient()
     {
-      Client testClient = new Client("Joe");
+      Client testClient = new Client("Joe", 1);
 
       testClient.Save();
       int actual = Client.GetAll()[0].GetId();
@@ -64,7 +64,7 @@ namespace HairSalon
     [Fact]
     public void Test_Find_FindClientInDatabaseById()
     {
-      Client testClient = new Client("Joe");
+      Client testClient = new Client("Joe", 1);
 
       testClient.Save();
       Client actual = Client.Find(testClient.GetId());
@@ -75,7 +75,7 @@ namespace HairSalon
     [Fact]
     public void Test_Delete_DeleteClientInDatabase()
     {
-      Client testClient = new Client("Joe");
+      Client testClient = new Client("Joe", 1);
       testClient.Save();
 
       testClient.Delete();
@@ -88,7 +88,7 @@ namespace HairSalon
     [Fact]
     public void Test_Update_UpdateClientNameInDatabase()
     {
-      Client testClient = new Client("Joe");
+      Client testClient = new Client("Joe", 1);
       testClient.Save();
 
       testClient.Update("Roy");

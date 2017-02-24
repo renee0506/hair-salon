@@ -71,5 +71,9 @@ namespace HairSalon
       Assert.Equal(testStylist, actual);
     }
 
+    [Fact]
+    public void Test_GetClients_GetClientsThatBelongToOneStylist()
+    {
+    }
   }
 }

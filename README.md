@@ -23,6 +23,8 @@ This website will allow users to view current stylists in a hair salon, current 
       CREATE TABLE clients (id INT IDENTITY(1,1), name VARCHAR(255));
       CREATE TABLE stylists (id INT IDENTITY(1,1), name VARCHAR(255), age INT, bio VARCHAR(255));
       GO
+      ALTER TABLE clients ADD stylist_id INT;
+      GO
 
 ## Specifications
 
