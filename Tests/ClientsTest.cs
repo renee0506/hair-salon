@@ -75,6 +75,7 @@ namespace HairSalon
     [Fact]
     public void Test_Delete_DeleteClientInDatabase()
     {
+      Client.DeleteAll();
       Client testClient = new Client("Joe", 1);
       testClient.Save();
 
