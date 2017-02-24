@@ -2,27 +2,28 @@ using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClinet;
+using System.Data.SqlClient;
+using HairSalon;
 
 namespace HairSalon
 {
-  public class ClientsTest: IDisposable
+  public class ClientTest
   {
-    public ClientsTest()
+    public ClientTest()
     {
       DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
     }
 
     // public void Dispose()
     // {
-    //   Clients.DeleteAll();
+    //   Client.DeleteAll();
     // }
 
     [Fact]
     public void Test_ClientsTableEmptyAtFirst()
     {
       //Arrange Act
-      int result = Clients.GetAll().Count;
+      int result = Client.GetAll().Count;
       //Assert
       Assert.Equal(0, result);
     }
