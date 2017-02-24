@@ -29,9 +29,9 @@ namespace HairSalon
     }
 
     [Fact]
-    public void Test_EqualOverrideTrueIfClientNamIsSame()
+    public void Test_EqualOverrideTrueIfClientNameIsSame()
     {
-      Client firstClient = new Client("Marc");
+      Client firstClient = new Client("Joe");
       Client secondClient = new Client("Joe");
 
       Assert.Equal(firstClient, secondClient);
