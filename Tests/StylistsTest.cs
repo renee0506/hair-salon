@@ -47,5 +47,17 @@ namespace HairSalon
       //Assert
       Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void Test_Save_AssignedIdToStylist()
+    {
+      Stylist testStylist = new Stylist("Joe", 24, "5 years in the Industry");
+
+      testStylist.Save();
+      int actual = Stylist.GetAll()[0].GetId();
+      int expected = testStylist.GetId();
+
+      Assert.Equal(expected, actual);
+    }
   }
 }
