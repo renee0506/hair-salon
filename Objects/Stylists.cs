@@ -50,6 +50,24 @@ namespace HairSalon
       conn.Close();
     }
 
+    public override bool Equals(System.Object otherStylist)
+    {
+      if (!(otherStylist is Stylist))
+      {
+        return false;
+      }
+      else
+      {
+        Stylist newStylist = (Stylist) otherStylist;
+        bool idEquality = (this.GetId() == newStylist.GetId());
+        bool nameEquality = (this.GetName() == newStylist.GetName());
+        bool ageEquality = (this.GetAge() == newStylist.GetAge());
+        bool bioEquality = (this.GetBio() == newStylist.GetBio());
+
+        return (idEquality && nameEquality && ageEquality && bioEquality);
+      }
+    }
+
     public static List<Stylist> GetAll()
     {
       List<Stylist> allStylists = new List<Stylist>{};
