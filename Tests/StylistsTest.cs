@@ -25,5 +25,14 @@ namespace HairSalon
 
       Assert.Equal(0, result);
     }
+
+    [Fact]
+    public void Test_EqualOverrideTrueIfStylistNameAgeBioSame()
+    {
+      Stylist firstStylist = new Stylist("Joe", 24, "5 years in the Industry");
+      Stylist secondStylist = new Stylist("Joe", 24, "5 years in the Industry");
+
+      Assert.Equal(firstStylist, secondStylist);
+    }
   }
 }
