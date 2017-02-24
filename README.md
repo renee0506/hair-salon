@@ -14,6 +14,15 @@ This website will allow users to view current stylists in a hair salon, current 
 * Use command "dnu restore" in command prompt/shell
 * Use command "dnx kestrel" to start server
 * Navigate to http://localhost:5004 in web browser of choice
+* In SQLCMD:
+
+      CREATE DATABASE hair_salon;
+      GO
+      USE hair_salon;
+      GO
+      CREATE TABLE clients (id INT IDENTITY(1,1), name VARCHAR(255));
+      CREATE TABLE stylists (id INT IDENTITY(1,1), name VARCHAR(255), age INT, bio VARCHAR(255));
+      GO
 
 ## Specifications
 
