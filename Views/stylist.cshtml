@@ -5,11 +5,12 @@
 <h2>Clients</h2>
 @foreach(var client in @Model["clients"])
 {
-  <li>@client.GetName()</li>
+  <li>@client.GetName() <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/edit">Edit</a>     <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/delete">Delete</a></li>
 }
 <h3>Add new Clients</h3>
-<form action="/client/new" method="post">
+<form action="/stylist/@Model["stylist"].GetId()/client/new" method="post">
   <label for="client-name">Name</label>
   <input type="text" name="client-name">
+  <button type="submit">Add</button>
 </form>
 <a href="/">Back to Index</a>
