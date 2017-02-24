@@ -34,5 +34,18 @@ namespace HairSalon
 
       Assert.Equal(firstStylist, secondStylist);
     }
+
+    [Fact]
+    public void Test_Save_SaveToDatabase()
+    {
+      //Arrange
+      Stylist testStylist = new Stylist("Joe", 24, "5 years in the Industry");
+      //Act
+      testStylist.Save();
+      List<Stylist> expected = new List<Stylist>{testStylist};
+      List<Stylist> actual = Stylist.GetAll();
+      //Assert
+      Assert.Equal(expected, actual);
+    }
   }
 }
