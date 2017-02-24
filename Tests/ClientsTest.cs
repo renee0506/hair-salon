@@ -85,5 +85,18 @@ namespace HairSalon
 
       Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void Test_Update_UpdateClientNameInDatabase()
+    {
+      Client testClient = new Client("Joe");
+      testClient.Save();
+
+      testClient.Update("Roy");
+      List<Clinet> expected = new List<Client>{testClient};
+      List<Client> actual = Client.GetAll();
+
+      Assert.Equal(expected, actual);
+    }
   }
 }
