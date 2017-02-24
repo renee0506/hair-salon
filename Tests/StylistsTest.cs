@@ -74,6 +74,17 @@ namespace HairSalon
     [Fact]
     public void Test_GetClients_GetClientsThatBelongToOneStylist()
     {
+      Stylist testStylist = new Stylist("Joe", 24, "5 years in the Industry");
+      testStylist.Save();
+
+      Client firstClient = new Client("Roy", testStylsit.GetId());
+      Client secondClient = new Client("Jeff", testSylist.GetId());
+      Client thirdClient = new Client("Kay", testSylist.GetId());
+
+      List<Client> expected = new List<Client> {firstClient, secondClient, thirdClient};
+      List<Client> actual = testStylist.GetClients();
+
+      Assert.Equal(expected, actual);
     }
   }
 }
