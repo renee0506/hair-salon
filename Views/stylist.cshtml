@@ -1,0 +1,15 @@
+<h1>@Model["stylist"].GetName()</h1>
+<h4>@Model["stylist"].GetAge()</h4>
+<p>@Model["stylist"].GetBio()</p>
+<hr>
+<h2>Clients</h2>
+@foreach(var client in @Model["clients"])
+{
+  <li>@client.GetName()</li>
+}
+<h3>Add new Clients</h3>
+<form action="/client/new" method="post">
+  <label for="client-name">Name</label>
+  <input type="text" name="client-name">
+</form>
+<a href="/">Back to Index</a>

@@ -1,0 +1,9 @@
+<ul>
+  @foreach(var stylist in @Model)
+  {
+    <li>@stylist.GetName()</li>
+  }
+</ul>
+
+<h1>Manage System</h1>
+<a href="/stylist/form">Add A New Stylsit</a>
