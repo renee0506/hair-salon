@@ -112,7 +112,7 @@ Stylist1: Roy, 22, 5 year experience, 1
 
 ## Support and contact details
 
-Please contact Renee Mei at dontemailme@dontemailme.com with any questions, concerns, or suggestions.
+Please contact Renee Mei at meiqianye@gmail.com with any questions, concerns, or suggestions.
 
 ## Technologies Used
 
