@@ -1,10 +1,22 @@
-<h1>Stylists</h1>
-<ul>
-  @foreach(var stylist in @Model)
-  {
-    <li><a href="/stylist/@stylist.GetId()">@stylist.GetName()</a></li>
-  }
-</ul>
+@{
+  Layout="Shared/_Layout.cshtml";
+}
 
-<h1>Manage System</h1>
-<a href="/stylist/form">Add A New Stylsit</a>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>Stylists</h2>
+      </div>
+        <div class="panel-body full-height">
+          <ul>
+            @foreach(var stylist in @Model)
+            {
+              <li><a href="/stylist/@stylist.GetId()">@stylist.GetName()</a></li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    @Html.Partial("manage.cshtml")
+</div>

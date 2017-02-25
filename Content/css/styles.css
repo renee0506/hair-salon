@@ -1,0 +1,16 @@
+body {
+  background-color: #29424F;
+}
+
+#interface{
+  margin-top: 20vh;
+  height: 60vh;
+}
+
+.full-height {
+  height:40vh;
+}
+
+.btn {
+  margin-top: 2%;
+}

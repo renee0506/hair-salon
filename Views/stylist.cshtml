@@ -1,16 +1,40 @@
-<h1>@Model["stylist"].GetName()</h1>
-<h4>@Model["stylist"].GetAge()</h4>
-<p>@Model["stylist"].GetBio()</p>
-<hr>
-<h2>Clients</h2>
-@foreach(var client in @Model["clients"])
-{
-  <li>@client.GetName() <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/edit">Edit</a>     <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/delete">Delete</a></li>
+@{
+  Layout="Shared/_Layout.cshtml";
 }
-<h3>Add new Clients</h3>
-<form action="/stylist/@Model["stylist"].GetId()/client/new" method="post">
-  <label for="client-name">Name</label>
-  <input type="text" name="client-name">
-  <button type="submit">Add</button>
-</form>
-<a href="/">Back to Index</a>
+
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Stylist Info</h2>
+    </div>
+    <div class="panel-body full-height">
+      <h1>@Model["stylist"].GetName()</h1>
+      <h4>Age: @Model["stylist"].GetAge()</h4>
+      <p>Bio: @Model["stylist"].GetBio()</p>
+      <hr>
+      <h2>Clients</h2>
+      @foreach(var client in @Model["clients"])
+      {
+        <li>@client.GetName() <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/edit">Edit</a>     <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/delete">Delete</a></li>
+      }
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Manage</h2>
+    </div>
+    <div class="panel-body full-height">
+      <h3>Add new Clients</h3>
+      <form action="/stylist/@Model["stylist"].GetId()/client/new" method="post" class="form-group">
+        <label for="client-name">Name</label>
+        <input type="text" name="client-name" class="form-control">
+        <button type="submit" class="btn">Add</button>
+      </form>
+      <a href="/">Back to Index</a>
+    </div>
+  </div>
+</div>
