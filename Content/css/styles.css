@@ -14,3 +14,16 @@ body {
 .btn {
   margin-top: 2%;
 }
+
+ul {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+#client-list {
+  height: 50%;
+}
+
+li, p, a {
+  font-size: 20px;
+}

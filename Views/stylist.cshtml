@@ -3,7 +3,7 @@
 }
 
 <div class="col-md-9">
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-heading">
       <h2>Stylist Info</h2>
     </div>
@@ -13,17 +13,19 @@
       <p>Bio: @Model["stylist"].GetBio()</p>
       <hr>
       <h2>Clients</h2>
-      @foreach(var client in @Model["clients"])
-      {
-        <li>@client.GetName() <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/edit">Edit</a>     <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/delete">Delete</a></li>
-      }
+      <ul id="client-list">
+        @foreach(var client in @Model["clients"])
+        {
+          <li>@client.GetName() <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/edit">Edit</a>     <a href="/stylist/@Model["stylist"].GetId()/client/@client.GetId()/delete">Delete</a></li>
+        }
+      </ul>
     </div>
   </div>
 </div>
 
 
 <div class="col-md-3">
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-heading">
       <h2>Manage</h2>
     </div>
