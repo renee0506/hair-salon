@@ -15,14 +15,23 @@ This website will allow users to view current stylists in a hair salon, current 
 * In SQLCMD:
 
       CREATE DATABASE hair_salon;
+
       GO
+
       USE hair_salon;
+
       GO
+
       CREATE TABLE clients (id INT IDENTITY(1,1), name VARCHAR(255));
+
       CREATE TABLE stylists (id INT IDENTITY(1,1), name VARCHAR(255), age INT, bio VARCHAR(255));
+
       GO
+
       ALTER TABLE clients ADD stylist_id INT;
+
       GO
+
 * Use command "dnx kestrel" to start server
 * Navigate to http://localhost:5004 in web browser of choice
 
@@ -30,17 +39,16 @@ This website will allow users to view current stylists in a hair salon, current 
 
 Example Clients:
 
-| Object | Name | Stylist |id|
-|---|---|---|
-|  Client1 | Jennifer  | Roy  |1|
-|  Client2 | Kathy  | Roy |2|
+(Name, Stylist, id)
 
-Example Sylists:
+Client1 : Jennifer,  Roy, 1
+Client2 : Kathy, Roy, 2
 
-| Object | Name | Age |Bio|id|
-|---|---|---|
-|  Stylist1 | Roy  | 22  | 5 year experience|1|
-|  Stylist2 | Joe  | 18 | just graduated from fashion school|2|
+Example Stylist:
+
+(Name, Age, Bio, id)
+
+Stylist1: Roy, 22, 5 year experience, 1
 
 **The GetAll method will return an empty list if the list of stylist is empty in the beginning**
 * Example Input: function call
